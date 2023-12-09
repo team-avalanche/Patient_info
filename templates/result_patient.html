@@ -1,0 +1,120 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Information</title>
+</head>
+<body>
+    <h1>Patient Information</h1>
+    <p><strong>PatientID:</strong> {{ patient_info['PatientId'] }}</p>
+    <p><strong>AppointmentID:</strong> {{ patient_info['AppointmentID'] }}</p>
+    <p><strong>Gender:</strong> {{ patient_info['Gender'] }}</p>
+    <p><strong>ScheduledDay:</strong> {{ patient_info['ScheduledDay'] }}</p>
+    <p><strong>AppointmentDay:</strong> {{ patient_info['AppointmentDay'] }}</p>
+    <p><strong>Age:</strong> {{ patient_info['Age'] }}</p>
+    <p><strong>Neighbourhood:</strong> {{ patient_info['Neighbourhood'] }}</p>
+    <p><strong>Hipertension:</strong> {{ patient_info['Hipertension'] }}</p>
+    <p><strong>Diabetes:</strong> {{ patient_info['Diabetes'] }}</p>
+    <p><strong>Alcoholism:</strong> {{ patient_info['Alcoholism'] }}</p>
+    <p><strong>Handcap:</strong> {{ patient_info['Handcap'] }}</p>
+    <p><strong>SMS_received:</strong> {{ patient_info['SMS_received'] }}</p>
+
+    <a href="/">Go back to enter another AppointmentID</a>
+</body>
+</html>
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Patient Information</title>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.js"></script>
+     <style>
+         body {
+             font-family: Arial, sans-serif;
+             background-color: #f0f0f0;
+             text-align: center;
+             margin: 0;
+             padding: 0;
+         }
+ 
+         .info-box {
+             background-color: #fff;
+             border: 1px solid #ccc;
+             border-radius: 10px;
+             padding: 20px;
+             margin: 20px auto;
+             max-width: 600px;
+         }
+ 
+         h1 {
+             color: #333;
+         }
+ 
+         p {
+             color: #555;
+             margin: 10px 0;
+         }
+ 
+         strong {
+             color: #4caf50;
+         }
+ 
+         a {
+             color: #3498db;
+             text-decoration: none;
+             display: block;
+             margin-top: 20px;
+         }
+ 
+         a:hover {
+             color: #2980b9;
+         }
+ 
+         .download-btn {
+             background-color: #3498db;
+             color: #fff;
+             padding: 10px;
+             border: none;
+             border-radius: 5px;
+             cursor: pointer;
+             margin-top: 20px;
+         }
+ 
+         .download-btn:hover {
+             background-color: #2980b9;
+         }
+     </style>
+ </head>
+ <body>
+     <div class="info-box">
+         <h1>Patient Information</h1>
+         <p><strong>PatientID:</strong> {{ patient_info['PatientId'] }}</p>
+         <p><strong>AppointmentID:</strong> {{ patient_info['AppointmentID'] }}</p>
+         <p><strong>Gender:</strong> {{ patient_info['Gender'] }}</p>
+         <p><strong>ScheduledDay:</strong> {{ patient_info['ScheduledDay'] }}</p>
+         <p><strong>AppointmentDay:</strong> {{ patient_info['AppointmentDay'] }}</p>
+         <p><strong>Age:</strong> {{ patient_info['Age'] }}</p>
+         <p><strong>Neighbourhood:</strong> {{ patient_info['Neighbourhood'] }}</p>
+         <p><strong>Hipertension:</strong> {{ patient_info['Hipertension'] }}</p>
+         <p><strong>Diabetes:</strong> {{ patient_info['Diabetes'] }}</p>
+         <p><strong>Alcoholism:</strong> {{ patient_info['Alcoholism'] }}</p>
+         <p><strong>Handcap:</strong> {{ patient_info['Handcap'] }}</p>
+         <p><strong>SMS_received:</strong> {{ patient_info['SMS_received'] }}</p>
+ 
+         <button class="download-btn" onclick="downloadPDF()">Download as PDF</button>
+ 
+         <a href="/">Go back to enter another AppointmentID</a>
+     </div>
+ 
+     <script>
+         function downloadPDF() {
+             var element = document.querySelector('.info-box');
+             html2pdf(element);
+         }
+     </script>
+ </body>
+ </html>
+ 
